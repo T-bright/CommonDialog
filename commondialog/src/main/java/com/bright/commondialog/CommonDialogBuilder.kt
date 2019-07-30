@@ -6,7 +6,7 @@ import androidx.annotation.StringRes
 import com.bright.commondialog.base.BaseDialogBuilder
 
 
-class CommonDialogBuilder(private var context: Context, private var style: Int = R.style.BaseDialog) : BaseDialogBuilder<CommonDialogBuilder, CommonDialog>(context, style) {
+class CommonDialogBuilder(context: Context, mStyle: Int = R.style.BaseDialog) : BaseDialogBuilder<CommonDialogBuilder, CommonDialog>(context, mStyle) {
 
     companion object {
         const val NOTITLE_ONLY = "1"//没有标题，但是有两个按钮
@@ -19,7 +19,7 @@ class CommonDialogBuilder(private var context: Context, private var style: Int =
     override var dialogBuilder: CommonDialogBuilder = this
 
     override fun dialogInstance(): CommonDialog {
-        return CommonDialog(context)
+        return CommonDialog(context, style)
     }
 
     //类型

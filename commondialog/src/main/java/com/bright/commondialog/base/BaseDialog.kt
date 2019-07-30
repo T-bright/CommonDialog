@@ -4,10 +4,9 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import com.bright.commondialog.R
 import com.bright.commondialog.interfaces.BaseDialogInterface
 
-abstract class BaseDialog<T : BaseDialogBuilder<*, *>>(context: Context, style: Int = R.style.BaseDialog) : AlertDialog(context, style), BaseDialogInterface {
+abstract class BaseDialog<T : BaseDialogBuilder<*, *>>(context: Context, style: Int) : AlertDialog(context, style), BaseDialogInterface {
 
     open lateinit var dialogBuilder: T
 

@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     //没有标题，两个按钮
     private fun notitleOnly() {
         val dataBean = TestDialogDataBean()
-        CommonDialogBuilder(this).withType(CommonDialogBuilder.NOTITLE_ONLY)
+        CommonDialogBuilder(this, R.style.CommonDialogStyleTest).withType(CommonDialogBuilder.NOTITLE_ONLY)
             .withMessage("确定要开枪吗？")
             .withNegative { view, dialog ->
                 toast("点击了取消")

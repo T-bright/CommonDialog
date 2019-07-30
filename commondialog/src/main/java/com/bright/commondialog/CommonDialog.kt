@@ -9,9 +9,7 @@ import com.bright.commondialog.extension.visible
 import kotlinx.android.synthetic.main.dialog_common.*
 
 
-class CommonDialog(context: Context, style: Int = R.style.BaseDialog) : BaseDialog<CommonDialogBuilder>(context, style) {
-
-
+class CommonDialog(context: Context, style: Int) : BaseDialog<CommonDialogBuilder>(context, style) {
 
     override fun setContentView(): Int {
         return R.layout.dialog_common
@@ -21,7 +19,6 @@ class CommonDialog(context: Context, style: Int = R.style.BaseDialog) : BaseDial
         initVisible()
         initListener()
     }
-
 
     override fun onStart() {
         super.onStart()

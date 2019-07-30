@@ -7,12 +7,11 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.FloatRange
 import androidx.annotation.StringRes
-import com.bright.commondialog.R
 import com.bright.commondialog.interfaces.BaseDialogInterface
 import com.bright.commondialog.interfaces.OnDialogClickedListener
 
 
-abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(private var context: Context, private var style: Int = R.style.BaseDialog) {
+abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Context, var style: Int) {
 
     //初始化 Builder
     abstract var dialogBuilder: B
