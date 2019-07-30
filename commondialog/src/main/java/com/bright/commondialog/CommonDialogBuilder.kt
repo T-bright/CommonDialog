@@ -18,7 +18,7 @@ class CommonDialogBuilder(context: Context, mStyle: Int = R.style.BaseDialog) : 
 
     override var dialogBuilder: CommonDialogBuilder = this
 
-    override fun dialogInstance(): CommonDialog {
+    override fun build(): CommonDialog {
         return CommonDialog(context, style)
     }
 

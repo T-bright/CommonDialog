@@ -17,7 +17,7 @@ abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Contex
     abstract var dialogBuilder: B
 
     //初始化Dialog
-    abstract fun dialogInstance(): D
+    abstract fun build(): D
 
     open var dialog: D? = null
 
@@ -37,38 +37,41 @@ abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Contex
 
     open var dimAmount = 1.1f //背景昏暗度
 
-    //positive按钮。一般是右边的确定按钮。
+    //positive按钮。一般是右边的确定按钮。这个用户自定义。
     open var positiveStr: String? = null
     open var onPositiveDialogClickedListener: OnDialogClickedListener? = null
 
-    //negative按钮。一般是左边的取消按钮。
+    //negative按钮。一般是左边的取消按钮。这个用户自定义。
     open var negativeStr: String? = null
     open var onNegativeDialogClickedListener: OnDialogClickedListener? = null
 
-
     open fun show(): D {
         if (dialog == null) {
-            dialog = dialogInstance()
+            dialog = build()
         }
         dialog!!.show(this)
         return dialog!!
     }
 
+    //设置标题
     open fun withTitle(title: String?): B {
         this.title = title
         return dialogBuilder
     }
 
+    //设置标题
     open fun withTitle(@StringRes title: Int): B {
         this.title = context.getString(title)
         return dialogBuilder
     }
 
+    //设置消息
     open fun withMessage(@StringRes message: Int): B {
         this.message = context.getString(message)
         return dialogBuilder
     }
 
+    //设置消息
     open fun withMessage(message: String): B {
         this.message = message
         return dialogBuilder
@@ -94,11 +97,13 @@ abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Contex
         return dialogBuilder
     }
 
+    //设置动画
     open fun withAnimStyle(animStyle: Int): B {
         this.animStyle = animStyle
         return dialogBuilder
     }
 
+    //设置背景昏暗度
     open fun withDimAmount(@FloatRange(from = 0.0, to = 1.0) dimAmount: Float): B {
         this.dimAmount = dimAmount
         return dialogBuilder
