@@ -4,7 +4,7 @@ CommonDialog是一个基于AlertDialog的封装，支持弹出动画。<br/>
 大家可以根据自己实际项目的需要，仿照CommonDialog实现一个。<br/>
 
 # 预览效果
-
+![](https://github.com/T-bright/CommonDialog/blob/master/pic/gif.gif)
 # 基类代码
 
 **BaseDialog**
@@ -295,7 +295,3 @@ abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Contex
             }
             .show()
 ```
-
-CommonDialogBuilder和CommonDialog是我实现的一个通用类的Dialog，大家也可以使用。也可以仿照着自定义一个自己的Dialog。
-
-**欢迎大家题问题**
