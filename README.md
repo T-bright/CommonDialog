@@ -295,3 +295,7 @@ abstract class BaseDialogBuilder<B, D : BaseDialogInterface>(var context: Contex
             }
             .show()
 ```
+
+CommonDialogBuilder和CommonDialog是我实现的一个通用类的Dialog，大家也可以使用。也可以仿照着自定义一个自己的Dialog。
+
+**欢迎大家题问题**
